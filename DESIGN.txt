@@ -1,0 +1,21 @@
+The adjacent method was left in the Functions class because its use was minimal and I didn’t see benefits in terms of efficiency for moving it to another class. However, if it were to be refactored into another class, I would place it in the Entity class because most of the usages are from that class. 
+
+I kept the method clamp in Functions for a similar reason. I didn’t see its purpose if I had moved it into the WorldView class where the method was being called from. It is a simple helper function and could remain in the Functions class with other miscellaneous methods. 
+
+As well, the setAlpha method fits a similar description. Its usages are in ImageStore but the functionality of setAlpha didn’t align with storing images. 
+
+I was a little skeptical on where to place certain methods but I did my best to organize the classes into functions with a similar overall purpose. 
+
+I placed methods that managed and created the entities into the WorldModel class. This class holds a majority of the methods essential to making the world come to life. 
+
+The Entity class primarily moved and modified an entity. 
+
+Virtual World was the big overarching class contained the other classes. 
+
+The ImageStore class dealt with the images for the world. 
+
+The WorldView class was the main window into drawing and seeing the actual virtual world. 
+
+I also put a good bulk of the methods into the EventScheduler class that would execute or schedule activities and events. 
+
+My rationale for moving some of the ambiguous methods was to put them in the “parent class” or whichever of the parameters was on a larger scale in the VirtualWorld. For example, If a method took in parameters Entity and WorldModel, I would lean towards moving it into the WorldModel class. However, I also moved methods into certain classes if they worked together to achieve a common goal. 
